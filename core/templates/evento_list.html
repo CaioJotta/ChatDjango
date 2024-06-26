@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Eventos</h2>
+<ul>
+  {% for evento in eventos %}
+    <li>{{ evento.nome }} - {{ evento.descricao }} - {{ evento.data }}</li>
+    <a href="{% url 'evento_update' evento.pk %}">Editar</a> |
+    <a href="{% url 'evento_delete' evento.pk %}">Deletar</a>
+  {% endfor %}
+</ul>
+{% endblock %}
